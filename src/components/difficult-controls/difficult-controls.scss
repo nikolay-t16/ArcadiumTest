@@ -1,0 +1,15 @@
+.difficult-controls {
+  &__label {
+    text-align: center;
+  }
+
+  &__items{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+  }
+}

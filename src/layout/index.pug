@@ -1,0 +1,14 @@
+include  ./index.data.pug
+include  ../components/difficult-controls/difficult-controls
+doctype html
+html
+    head
+        meta(charset = 'utf-8')
+        meta(name='viewport', content='initial-scale=1.0, width=device-width')
+        title Крестики нолики
+    body
+        .app
+            .app__wraper
+                .app__difficult-controls
+                    +difficult-controls(difficultControls)
+                .app__game
