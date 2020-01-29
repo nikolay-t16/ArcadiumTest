@@ -1,5 +1,6 @@
 include  ./index.data.pug
 include  ../components/difficult-controls/difficult-controls
+include  ../components/game/game
 doctype html
 html
     head
@@ -12,3 +13,6 @@ html
                 .app__difficult-controls
                     +difficult-controls(difficultControls)
                 .app__game
+                    +game()
+                .app__start
+                    input.app__start-btn(type = 'button' value = 'Начать')
