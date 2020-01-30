@@ -10,5 +10,5 @@ mixin difficult-controls(options = {})
         .difficult-controls__items
             each control in controls
                 .difficult-controls__item
-                    input.difficult-controls__item-input(type = 'radio' name = inputName value = control.value)
+                    input.difficult-controls__item-input(type = 'radio' name = inputName value = control.value checked = control.checked)
                     .difficult-controls__item-label= control.label

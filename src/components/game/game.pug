@@ -2,5 +2,5 @@ mixin game(options = {})
     .game
         - let i = 0;
         while i < 9
-            .game__cell
+            .game__cell(data-num = i)
             - i++;

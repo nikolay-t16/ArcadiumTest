@@ -20,6 +20,7 @@ class GameController {
         this.startBtn = startBtn;
         this.gameCells = gameCells;
         this.initHandlers();
+        this.onStartGameClick();
     }
 
     public initHandlers(): void {
@@ -30,22 +31,19 @@ class GameController {
     }
 
     public onStartGameClick(): void {
-        console.log('onStartGameClick');
-    }
-
-    public onCellClick(e:MouseEvent): void {
-        // @ts-ignore
-        const parent = e.currentTarget.parentElement as HTMLElement;
-        let num = -1;
-        parent.childNodes.forEach((el, i) => {
-            if(el === e.currentTarget) {
-                num = i;
+        let dif = 0;
+        this.difficultControl.forEach((el: HTMLInputElement)=>{
+            if(el.checked) {
+                dif = +el.value;
             }
         });
-        if(num -1) {
-            console.log('Произошла непредвиденная ошибка');
-            return;
-        }
+        this.gameModel.startGame(dif);
+        this.gameView.startGame();
+    }
+
+    public onCellClick = (e:MouseEvent) => {
+        // @ts-ignore
+        const num = e.currentTarget.dataset.num;
         const res = this.gameModel.cellClick(num);
 
         if(res === -1) {
@@ -53,6 +51,8 @@ class GameController {
             return;
         }
 
+        this.gameView.setCell(num, res);
+        this.gameModel.checkWiner();
     }
 }
 
