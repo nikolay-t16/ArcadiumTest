@@ -1,1 +1,0 @@
-import './difficult-controls.scss';

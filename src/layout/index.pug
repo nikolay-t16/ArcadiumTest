@@ -1,5 +1,4 @@
 include  ./index.data.pug
-include  ../components/difficult-controls/difficult-controls
 include  ../components/game/game
 doctype html
 html
@@ -10,8 +9,6 @@ html
     body
         .app
             .app__wraper
-                .app__difficult-controls
-                    +difficult-controls(difficultControls)
                 .app__game
                     +game()
                 .app__start
