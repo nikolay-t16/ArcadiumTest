@@ -41,7 +41,7 @@ class GameController {
             return;
         }
 
-        const gameStatus = this.gameModel.checkWiner(true);
+        const gameStatus = this.gameModel.checkWinner(true);
         if (gameStatus !== GameModel.STATUS_CONTINUE) {
             this.stopGame(gameStatus);
             return;
@@ -53,7 +53,7 @@ class GameController {
     protected computerMove() {
         const computerCellNum = this.gameModel.makeComputerMove();
         this.makeMove(computerCellNum, false);
-        const gameStatus = this.gameModel.checkWiner(false);
+        const gameStatus = this.gameModel.checkWinner(false);
         if (gameStatus !== GameModel.STATUS_CONTINUE) {
             this.stopGame(gameStatus);
         }

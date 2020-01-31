@@ -44,7 +44,7 @@ class GameModel {
         this.cellsMap = new Map();
     }
 
-    public checkWiner(
+    public checkWinner(
         isPlayer: boolean,
         _cellsMap: CellsType = this.cellsMap,
         _isCellChecked = this.isCellChecked,
@@ -169,6 +169,7 @@ class GameModel {
             }
         }
         // то чего не должно произойти;
+        console.log('makeComputerMove выполнен с ошибкой');
         return -1;
     }
 
