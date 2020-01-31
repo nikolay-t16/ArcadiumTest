@@ -4,7 +4,6 @@ import GameModel from "./GameModel.ts";
 import GameView from "./GameView.ts";
 
 class GameController {
-
     public gameModel: GameModel;
     public gameView: GameView;
     public startBtn: HTMLElement;
@@ -59,8 +58,6 @@ class GameController {
             this.stopGame(gameStatus);
         }
     }
-
-
 
     protected stopGame(status: number): void {
         this.gameView.endGame(status);

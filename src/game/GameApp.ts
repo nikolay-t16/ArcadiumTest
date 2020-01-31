@@ -5,7 +5,6 @@ import GameModel from './GameModel.ts';
 // @ts-ignore
 import GameView from './GameView.ts';
 
-
 function gameInit(startBtn: HTMLElement, gameCells: HTMLElement) {
     const gameModel = new GameModel();
     const gameView = new GameView(gameCells);
@@ -16,8 +15,6 @@ function gameInit(startBtn: HTMLElement, gameCells: HTMLElement) {
         startBtn,
         gameCells,
     );
-
 }
-
 
 export default gameInit;

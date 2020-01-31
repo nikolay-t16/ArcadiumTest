@@ -2,8 +2,6 @@
 import GameModel from './GameModel.ts';
 
 class GameView {
-
-
     protected gameCells: HTMLElement;
 
     constructor(gameCells: HTMLElement) {
@@ -11,7 +9,11 @@ class GameView {
     }
 
     public setCell(num: number, isPlayer: boolean): void {
-        this.gameCells.children[num].textContent = isPlayer.toString();
+        if (this.gameCells.children.length > num) {
+            this.gameCells.children[num].textContent = isPlayer.toString();
+        } else {
+            console.log(`num: ${num} - вне диапозона`);
+        }
     }
 
     public startGame(): void {
